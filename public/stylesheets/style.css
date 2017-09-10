@@ -5857,7 +5857,30 @@ body {
       body .container-fluid .white-box .timeline-box {
         background-color: #ffffff;
         min-height: 200px;
-        border-radius: 0 0 5px 5px; }
+        border-radius: 0 0 5px 5px;
+        overflow: auto;
+        max-height: 580px; }
+        body .container-fluid .white-box .timeline-box .messages {
+          word-wrap: break-word; }
+          body .container-fluid .white-box .timeline-box .messages .message-block {
+            margin-top: 10px; }
+            body .container-fluid .white-box .timeline-box .messages .message-block .message {
+              background-color: #20BEB7;
+              min-height: 50px;
+              border-radius: 5px; }
+            body .container-fluid .white-box .timeline-box .messages .message-block .face {
+              border-radius: 25px;
+              height: 50px;
+              width: 50px;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 40px; }
+            body .container-fluid .white-box .timeline-box .messages .message-block.bluemix-chat-block .face {
+              background-image: url("../images/face-bluemix.svg");
+              background-color: #5596e6; }
+            body .container-fluid .white-box .timeline-box .messages .message-block.person-chat-block .face {
+              background-image: url("../images/face-person.svg");
+              background-color: #f47c2c; }
     body .container-fluid .footer-box {
       background-color: #20BEB7;
       border-radius: 0 0 5px 5px;

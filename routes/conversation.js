@@ -4,6 +4,7 @@ let app = express();
 
 app.post('/send-message', function (req, res) {
     let message = req.body.message;
+    console.log(message);
 
     try {
         let conversation = watson.conversation({
@@ -23,8 +24,10 @@ app.post('/send-message', function (req, res) {
                 res.json({text: 'ERRO'});
             } else {
                 console.log(response);
-                res.json({text: 'OK'});
-                // console.log(JSON.stringify(response, null, 2));
+                console.log(response.output.text);
+
+
+                res.json({text: response.output.text});
             }
         });
     } catch (e) {

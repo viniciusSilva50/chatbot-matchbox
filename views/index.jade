@@ -13,14 +13,45 @@ block content
             | CONVERSA
         div.row
           div.col-lg-8.col-lg-offset-2.timeline-box
-            | conteudo da conversa
+            div.messages
+
+                div.row.message-block.bluemix-chat-block
+                    div.chat-face.col-lg-2.col-md-2.col-sm-2.col-xs-2.text-center
+                        div.face.text-center
+
+                    div.chat-message.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-left
+                        div.message.text-left
+                            | Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem
+
+                div.row.message-block.person-chat-block
+                    div.chat-message.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-right
+                        div.message.text-right
+                            | Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem
+
+                    div.chat-face.col-lg-2.col-md-2.col-sm-2.col-xs-2.text-center
+                        div.face.text-center
+
+
+
+
+                div.row.message-block.bluemix-chat-block
+                    div.chat-face.col-lg-2.col-md-2.col-sm-2.col-xs-2.text-center
+                        div.face.text-center
+
+                    div.chat-message.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-left
+                        div.message.text-left
+                            | Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem
+
+
+
+
 
     div.row.footer-box
       div.col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.custom-margin
         div.row
           form
             div.form-group.col-lg-6.col-lg-offset-2.col-md-10.col-sm-11.col-xs-10.container-input
-              input(type="email", id="message", placeholder="Digite sua mensagem").form-control.field-message
+              input(type="text", id="message", placeholder="Digite sua mensagem").form-control.field-message
             div.form-group.col-lg-2.col-md-2.col-sm-1.col-xs-2.container-button.text-right
               button(type="button", id="sendMessage").btn.btn-default.btn-xs.send-message-button
                 span.hidden-xs
@@ -36,10 +67,7 @@ block content
         let message = document.getElementById('message').value;
 
         if(message !== undefined && message.length > 0 ){
-            let url = 'https://jsonplaceholder.typicode.com/posts/1';
-
             let request = new XMLHttpRequest();
-            /* request.setRequestHeader() */
 
             request.onload = function () {
                 console.log('Load the request');
@@ -50,12 +78,13 @@ block content
 
             }
 
-            /*request.open('GET', url, true);*/
 
-            request.open('POST', 'senda', true);
+            request.open('POST', 'conversation/send-message', true);
 
-            request.send({message: message});
-            /* request.send({})*/
+            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            request.send(JSON.stringify({message: message}));
+
         }
 
       }

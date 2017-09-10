@@ -4,9 +4,13 @@ $primary-color: #483686
 $primary-color-box: #DAD7EB
 $white-color: #ffffff
 $orange-color: #EDAE42
-$aqua-blue: #20BEB7
+$aqua-blue-color: #20BEB7
+$face-person-color: #f47c2c
+$face-bluemix-color: #5596e6
 
 $send-icon-path: url("../images/send-icon.svg")
+$bluemix-face-icon: url("../images/face-bluemix.svg")
+$person-face-icon: url("../images/face-person.svg")
 
 @mixin margin ($value)
   margin: $value
@@ -104,10 +108,45 @@ body
         background-color: $white-color
         min-height: 200px
         border-radius: 0 0 5px 5px
+        overflow: auto
+        max-height: 580px
+
+        .messages
+
+          word-wrap: break-word
+
+          .message-block
+            @include margin-top(10px)
+
+            .message
+              background-color: $aqua-blue-color
+              min-height: 50px
+              border-radius: 5px
+
+            .face
+
+              border-radius: 25px
+              height: 50px
+              width: 50px
+              background-repeat: no-repeat
+              background-position: center
+              background-size: 40px
+
+            &.bluemix-chat-block
+              .face
+                background-image: $bluemix-face-icon
+                background-color: $face-bluemix-color
+
+
+            &.person-chat-block
+              .face
+                background-image: $person-face-icon
+                background-color: $face-person-color
+
 
 
     .footer-box
-      background-color: $aqua-blue
+      background-color: $aqua-blue-color
       border-radius: 0 0 5px 5px
       max-height: 100px
       @include height(20%)
@@ -197,7 +236,7 @@ body
                   width: 100px
 
                 @media (max-width: $screen-sm-max)
-                  background-color: $aqua-blue
+                  background-color: $aqua-blue-color
                   width: initial
                   border-radius: 5px
 
