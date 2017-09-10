@@ -50,10 +50,11 @@ block content
 
             }
 
-            request.open('GET', url, true);
-            /*request.open('POST', url, true);*/
+            /*request.open('GET', url, true);*/
 
-            request.send()
+            request.open('POST', 'senda', true);
+
+            request.send({message: message});
             /* request.send({})*/
         }
 

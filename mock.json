@@ -1,0 +1,44 @@
+{
+  "intents":[
+    {
+      "intent":"greeting",
+      "confidence":1
+    }
+  ],
+  "entities":[
+
+  ],
+  "input":{
+    "text":"Ola"
+  },
+  "output":{
+    "text":[
+      "Olá,no que posso ajudar ?"
+    ],
+    "nodes_visited":[
+      "Bem-vindo"
+    ],
+    "log_messages":[
+
+    ]
+  },
+  "context":{
+    "conversation_id":"c238d725-a60e-4737-85f1-ba9d0d3ffe6e",
+    "system":{
+      "dialog_stack":[
+        {
+
+        }
+      ],
+      "dialog_turn_counter":1,
+      "dialog_request_counter":1,
+      "_node_output_map":[
+        {
+
+        }
+      ],
+      "branch_exited":true,
+      "branch_exited_reason":"completed"
+    }
+  }
+}

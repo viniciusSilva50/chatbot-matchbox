@@ -2,10 +2,13 @@
   "name": "untitled",
   "version": "0.0.0",
   "private": true,
+  "engine": {
+    "node": "ˆ6.11.1"
+  },
   "scripts": {
     "commit-develop": "git add . && git commit -m update && git push origin develop",
     "commit-master": "git add . && git commit -m update && git push origin master",
-    "git-status":"git status",
+    "git-status": "git status",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -13,12 +16,14 @@
     "bootstrap-sass": "^3.3.7",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
+    "dotenv": "^4.0.0",
     "express": "~4.15.2",
     "jade": "~1.11.0",
     "jquery": "^3.2.1",
     "morgan": "~1.8.1",
-    "node-sass-middleware": "0.9.8",
-    "serve-favicon": "~2.4.2"
+    "node-sass-middleware": "^0.9.8",
+    "serve-favicon": "~2.4.2",
+    "watson-developer-cloud": "^2.39.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
