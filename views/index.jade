@@ -19,11 +19,12 @@ block content
       div.col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.custom-margin
         div.row
           form
-            div.form-group.col-lg-6.col-lg-offset-2.col-md-9.custom-padding-left
+            div.form-group.col-lg-6.col-lg-offset-2.col-md-10.col-sm-11.col-xs-10.container-input
               input(type="email", id="message", placeholder="Digite sua mensagem").form-control.field-message
-            div.form-group.col-lg-2.col-lg-offset-2.col-md-3.custom-padding-right.custom-margin.text-right
-              button(type="button", id="sendMessage").btn.btn-default.send-message-button
-                | ENVIAR
+            div.form-group.col-lg-2.col-md-2.col-sm-1.col-xs-2.container-button.text-right
+              button(type="button", id="sendMessage").btn.btn-default.btn-xs.send-message-button
+                span.hidden-xs
+                    | ENVIAR
 
 
 

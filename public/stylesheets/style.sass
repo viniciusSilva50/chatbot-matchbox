@@ -6,6 +6,8 @@ $white-color: #ffffff
 $orange-color: #EDAE42
 $aqua-blue: #20BEB7
 
+$send-icon-path: url("../images/send-icon.svg")
+
 @mixin margin ($value)
   margin: $value
 
@@ -34,8 +36,20 @@ $aqua-blue: #20BEB7
   padding-right: $value
 
 @mixin height($value)
-
   height: $value
+
+@mixin placeholder-color($value)
+  &::-webkit-input-placeholder /* Chrome/Opera/Safari */
+    color: $value
+
+  &::-moz-placeholder /* Firefox 19+ */
+    color: $value
+
+  &:-ms-input-placeholder /* IE 10+ */
+    color: $value
+
+  &:-moz-placeholder /* Firefox 18- */
+    color: $value
 
 .no-margin
   margin: 0
@@ -120,45 +134,82 @@ body
         form
           @include padding-top(45px)
 
-          input
-            &.field-message
-              background-color: initial
-              color: white
-              border: none
-              border-bottom: 1px solid $white-color
-              border-radius: 0
-              box-shadow: none
-              font-size: 16px
-              @include padding-right(0)
-              @include padding-left(0)
-              @include padding-bottom(0)
+          @media (max-width: $screen-sm-max)
+            @include padding-top(20px)
 
-              &::-webkit-input-placeholder /* Chrome/Opera/Safari */
+          .container-input
+            @include padding-left(0)
+
+            @media (max-width: $screen-sm-max)
+              @include padding-left(15px)
+              @include padding-right(3px)
+
+            &.col-xs-10
+              @media (max-width: $screen-xs-max)
+                width: 89.33333%
+
+            input
+              &.field-message
+                background-color: initial
+                color: white
+                border: none
+                border-bottom: 1px solid $white-color
+                border-radius: 0
+                box-shadow: none
+                font-size: 16px
+                @include padding-right(0)
+                @include padding-left(0)
+                @include padding-bottom(0)
+                @include placeholder-color($white-color)
+
+                @media (max-width: $screen-sm-max)
+                  background-color: $white-color
+                  color: $primary-color
+                  border-radius: 4px
+                  padding: 6px 12px
+                  @include placeholder-color($primary-color)
+
+          .container-button
+
+
+            @media (max-width: $screen-sm-max)
+              @include padding-left(3px)
+              @include padding-right(15px)
+
+            &.col-xs-2
+              @media (max-width: $screen-xs-max)
+                width: 7.66667%
+
+
+            button
+              &.send-message-button
+                background-color: $primary-color
                 color: $white-color
+                border-radius: 100px
+                border: none
+                box-shadow: none
+                font-size: 10px
 
-              &::-moz-placeholder /* Firefox 19+ */
-                color: $white-color
+                cursor: pointer
+                height: 34px
 
-              &:-ms-input-placeholder /* IE 10+ */
-                color: $white-color
+                @media (min-width: $screen-md-min)
+                  width: 100px
 
-              &:-moz-placeholder /* Firefox 18- */
-                color: $white-color
-          button
-            &.send-message-button
-              background-color: $primary-color
-              color: $white-color
-              border-radius: 100px
-              border: none
-              box-shadow: none
-              font-size: 10px
-              padding: 8px 45px
-              cursor: pointer
+                @media (max-width: $screen-sm-max)
+                  background-color: $aqua-blue
+                  width: initial
+                  border-radius: 5px
 
 
-
-
-
+                @media (max-width: $screen-xs-max)
+                  background-color: tomato
+                  padding: 0px
+                  width: 34px
+                  background-image: $send-icon-path
+                  background-size: 20px
+                  background-repeat: no-repeat
+                  background-position: center
 
 
 

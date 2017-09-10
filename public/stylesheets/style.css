@@ -5880,33 +5880,83 @@ body {
         margin-right: 0; }
       body .container-fluid .footer-box .row form {
         padding-top: 45px; }
-        body .container-fluid .footer-box .row form input.field-message {
-          background-color: initial;
-          color: white;
-          border: none;
-          border-bottom: 1px solid #ffffff;
-          border-radius: 0;
-          box-shadow: none;
-          font-size: 16px;
-          padding-right: 0;
-          padding-left: 0;
-          padding-bottom: 0; }
-          body .container-fluid .footer-box .row form input.field-message::-webkit-input-placeholder {
-            color: #ffffff; }
-          body .container-fluid .footer-box .row form input.field-message::-moz-placeholder {
-            color: #ffffff; }
-          body .container-fluid .footer-box .row form input.field-message:-ms-input-placeholder {
-            color: #ffffff; }
-          body .container-fluid .footer-box .row form input.field-message:-moz-placeholder {
-            color: #ffffff; }
-        body .container-fluid .footer-box .row form button.send-message-button {
+        @media (max-width: 991px) {
+          body .container-fluid .footer-box .row form {
+            padding-top: 20px; } }
+        body .container-fluid .footer-box .row form .container-input {
+          padding-left: 0; }
+          @media (max-width: 991px) {
+            body .container-fluid .footer-box .row form .container-input {
+              padding-left: 15px;
+              padding-right: 3px; } }
+          @media (max-width: 767px) {
+            body .container-fluid .footer-box .row form .container-input.col-xs-10 {
+              width: 89.33333%; } }
+          body .container-fluid .footer-box .row form .container-input input.field-message {
+            background-color: initial;
+            color: white;
+            border: none;
+            border-bottom: 1px solid #ffffff;
+            border-radius: 0;
+            box-shadow: none;
+            font-size: 16px;
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0; }
+            body .container-fluid .footer-box .row form .container-input input.field-message::-webkit-input-placeholder {
+              color: #ffffff; }
+            body .container-fluid .footer-box .row form .container-input input.field-message::-moz-placeholder {
+              color: #ffffff; }
+            body .container-fluid .footer-box .row form .container-input input.field-message:-ms-input-placeholder {
+              color: #ffffff; }
+            body .container-fluid .footer-box .row form .container-input input.field-message:-moz-placeholder {
+              color: #ffffff; }
+            @media (max-width: 991px) {
+              body .container-fluid .footer-box .row form .container-input input.field-message {
+                background-color: #ffffff;
+                color: #483686;
+                border-radius: 4px;
+                padding: 6px 12px; }
+                body .container-fluid .footer-box .row form .container-input input.field-message::-webkit-input-placeholder {
+                  color: #483686; }
+                body .container-fluid .footer-box .row form .container-input input.field-message::-moz-placeholder {
+                  color: #483686; }
+                body .container-fluid .footer-box .row form .container-input input.field-message:-ms-input-placeholder {
+                  color: #483686; }
+                body .container-fluid .footer-box .row form .container-input input.field-message:-moz-placeholder {
+                  color: #483686; } }
+        @media (max-width: 991px) {
+          body .container-fluid .footer-box .row form .container-button {
+            padding-left: 3px;
+            padding-right: 15px; } }
+        @media (max-width: 767px) {
+          body .container-fluid .footer-box .row form .container-button.col-xs-2 {
+            width: 7.66667%; } }
+        body .container-fluid .footer-box .row form .container-button button.send-message-button {
           background-color: #483686;
           color: #ffffff;
           border-radius: 100px;
           border: none;
           box-shadow: none;
           font-size: 10px;
-          padding: 8px 45px;
-          cursor: pointer; }
+          cursor: pointer;
+          height: 34px; }
+          @media (min-width: 992px) {
+            body .container-fluid .footer-box .row form .container-button button.send-message-button {
+              width: 100px; } }
+          @media (max-width: 991px) {
+            body .container-fluid .footer-box .row form .container-button button.send-message-button {
+              background-color: #20BEB7;
+              width: initial;
+              border-radius: 5px; } }
+          @media (max-width: 767px) {
+            body .container-fluid .footer-box .row form .container-button button.send-message-button {
+              background-color: tomato;
+              padding: 0px;
+              width: 34px;
+              background-image: url("../images/send-icon.svg");
+              background-size: 20px;
+              background-repeat: no-repeat;
+              background-position: center; } }
 
 /*# sourceMappingURL=style.css.map */

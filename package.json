@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-
+    "commit-develop": "git add . && git commit -m update && git push origin develop",
+    "commit-master": "git add . && git commit -m update && git push origin master",
+    "git-status":"git status",
     "start": "node ./bin/www"
   },
   "dependencies": {
