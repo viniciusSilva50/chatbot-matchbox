@@ -1,0 +1,61 @@
+extends layout
+
+block content
+
+  div.container-fluid
+    div.row.white-box.custom-padding
+      div.col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2
+        div.row
+          div.col-lg-8.col-lg-offset-2.col-sm-12.col-xs-12.text-center.logo
+            img(width="350", height="64", src="http://matchboxbrasil.com/wp-content/uploads/2017/06/matchbox-logo-1.png", alt="logo")
+        div.row
+          div.col-lg-8.col-lg-offset-2.text-center.conversation-box
+            | CONVERSA
+        div.row
+          div.col-lg-8.col-lg-offset-2.timeline-box
+            | conteudo da conversa
+
+    div.row.footer-box
+      div.col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.custom-margin
+        div.row
+          form
+            div.form-group.col-lg-6.col-lg-offset-2.col-md-9.custom-padding-left
+              input(type="email", id="message", placeholder="Digite sua mensagem").form-control.field-message
+            div.form-group.col-lg-2.col-lg-offset-2.col-md-3.custom-padding-right.custom-margin.text-right
+              button(type="button", id="sendMessage").btn.btn-default.send-message-button
+                | ENVIAR
+
+
+
+
+  block page-js
+
+    script.
+      var send = function () {
+        let message = document.getElementById('message').value;
+
+        if(message !== undefined && message.length > 0 ){
+            let url = 'https://jsonplaceholder.typicode.com/posts/1';
+
+            let request = new XMLHttpRequest();
+            /* request.setRequestHeader() */
+
+            request.onload = function () {
+                console.log('Load the request');
+                console.log(this.responseText);
+            }
+
+            request.onreadystatechange = function () {
+
+            }
+
+            request.open('GET', url, true);
+            /*request.open('POST', url, true);*/
+
+            request.send()
+            /* request.send({})*/
+        }
+
+      }
+
+      document.getElementById('sendMessage').addEventListener('click', send);
