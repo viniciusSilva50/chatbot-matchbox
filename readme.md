@@ -5,6 +5,7 @@ onde foi desenvolvido um chatbot em Node.js que se comunica com o framework Conv
 
 * Data de inicio do desenvolvimento foi em 10/09/2017
 * Data da entrega da primeira versão foi em 11/09/2017
+* Link do projeto no ar https://chatbot-matchbox.mybluemix.net/
 
 ### Observações para deploy
     * O node deve estar em uma versão que conporte o ES6
