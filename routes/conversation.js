@@ -24,6 +24,7 @@ app.post('/send-message', function (req, res) {
                 res.json({text: ['Ops, aconteceu um erro, tente novamente!']});
             } else {
                 console.log(response.output.text);
+                console.log('++++ Bluemix response ++++');
                 res.json({text: response.output.text});
             }
         });
