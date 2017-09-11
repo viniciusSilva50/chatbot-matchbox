@@ -2,9 +2,11 @@ let watson = require('watson-developer-cloud');
 let express = require('express');
 let app = express();
 
+let contextConversation = {};
+
 app.post('/send-message', function (req, res) {
     let message = req.body.message;
-    console.log(message);
+    let context = contextConversation;
 
     try {
         let conversation = watson.conversation({
@@ -17,14 +19,17 @@ app.post('/send-message', function (req, res) {
         conversation.message({
             workspace_id: process.env.WORKSPACE_ID,
             input: {'text': message},
-            context: {}
+            context: context
         }, function (err, response) {
             if (err) {
                 console.log(err);
                 res.json({text: ['Ops, aconteceu um erro, tente novamente!']});
             } else {
-                console.log(response.output.text);
-                console.log('++++ Bluemix response ++++');
+                contextConversation = response.context;
+                // console.log(response.context.conversation_id);
+                // console.log(response.output.text);
+                // console.log(contextConversation);
+                // console.log('++++ Bluemix response ++++');
                 res.json({text: response.output.text});
             }
         });

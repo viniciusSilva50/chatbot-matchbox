@@ -48,6 +48,8 @@ block content
 
     block page-js
         script.
+            var conversationContext = 0;
+
             function chatElement(selector, message, childdrenIndex) {
                 let chatElement = document.querySelector(selector).cloneNode(true);
                 let chatMessage = chatElement.children[childdrenIndex];
@@ -59,26 +61,34 @@ block content
             }
 
             var send = function () {
-                let message = document.getElementById('message').value;
-                let messagesElement = document.getElementById('messagesBlock');
+                var message = document.getElementById('message').value;
+                var messagesElement = document.getElementById('messagesBlock');
 
                 document.getElementById('message').value = '';
 
                 if (message !== undefined && message.length > 0) {
                     document.getElementById('sendMessage').classList.toggle('hidden');
 
-                    let request = new XMLHttpRequest();
+                    var request = new XMLHttpRequest();
 
                     request.onload = function () {
-                        let data = this.responseText;
-                        let obj = JSON.parse(data);
 
-                        let text = obj.text;
+                        var data = this.responseText;
+                        var obj = JSON.parse(data);
+
+                        console.log(obj);
+
+
+                        var text = obj.text;
+
+
 
                         for(var i = 0; i < text.length; i++){
                             messagesElement.appendChild(chatElement('.bluemix-chat-block.hidden', text[i], 1));
-                            document.getElementById('sendMessage').classList.toggle('hidden');
+
                         }
+
+                        document.getElementById('sendMessage').classList.toggle('hidden');
                     }
 
                     messagesElement.appendChild(chatElement('.person-chat-block.hidden', message, 0));
