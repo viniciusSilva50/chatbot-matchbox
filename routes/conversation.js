@@ -21,7 +21,7 @@ app.post('/send-message', function (req, res) {
         }, function (err, response) {
             if (err) {
                 console.log(err);
-                res.json({text: 'ERRO'});
+                res.json({text: ['Ops, aconteceu um erro, tente novamente!']});
             } else {
                 console.log(response.output.text);
                 res.json({text: response.output.text});
@@ -29,7 +29,7 @@ app.post('/send-message', function (req, res) {
         });
     } catch (e) {
         console.log(e);
-        res.json({text: 'ERRO'});
+        res.json({text: ['Ops, aconteceu um erro, tente novamente!']});
     }
 
 

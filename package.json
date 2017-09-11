@@ -1,9 +1,10 @@
 {
-  "name": "untitled",
-  "version": "0.0.0",
+  "name": "chatbot-matchbox",
+  "version": "0.0.1",
   "private": true,
   "engine": {
-    "node": "ˆ6.11.1"
+    "node": "ˆ6.11.1",
+    "npm": "3.x"
   },
   "scripts": {
     "commit-develop": "git add . && git commit -m update && git push origin develop",
