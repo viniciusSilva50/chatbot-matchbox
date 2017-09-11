@@ -2,91 +2,104 @@ extends layout
 
 block content
 
-  div.container-fluid
-    div.row.white-box.custom-padding
-      div.col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2
-        div.row
-          div.col-lg-8.col-lg-offset-2.col-sm-12.col-xs-12.text-center.logo
-            img(width="350", height="64", src="http://matchboxbrasil.com/wp-content/uploads/2017/06/matchbox-logo-1.png", alt="logo")
-        div.row
-          div.col-lg-8.col-lg-offset-2.text-center.conversation-box
-            | CONVERSA
-        div.row
-          div.col-lg-8.col-lg-offset-2.timeline-box
-            div.messages
+    div.container-fluid
+        div.row.box
+            div.col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.container-rows
+                div.row.firt-row-logo
+                    div.col-lg-8.col-lg-offset-2.col-sm-12.col-xs-12.text-center.logo
+                        img(width="350", height="64", src="http://matchboxbrasil.com/wp-content/uploads/2017/06/matchbox-logo-1.png", alt="logo")
 
-                div.row.message-block.bluemix-chat-block
-                    div.chat-face.col-lg-2.col-md-2.col-sm-2.col-xs-2.text-center
-                        div.face.text-center
+                div.row.second-row-title
+                    div.col-lg-8.col-lg-offset-2.text-center.conversation-box
+                        | CONVERSA
 
-                    div.chat-message.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-left
-                        div.message.text-left
-                            | Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem
+                div.row.third-row-timeline
+                    div.col-lg-8.col-lg-offset-2.timeline-box
+                        div.messages#messagesBlock
+                            div.row.message-block.bluemix-chat-block.hidden
+                                div.chat-face.col-lg-2.col-md-2.col-sm-2.col-xs-2.text-center
+                                    div.face.text-center
 
-                div.row.message-block.person-chat-block
-                    div.chat-message.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-right
-                        div.message.text-right
-                            | Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem
+                                div.chat-message.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-left
+                                    div.message.text-left
+                                        | Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem
 
-                    div.chat-face.col-lg-2.col-md-2.col-sm-2.col-xs-2.text-center
-                        div.face.text-center
+                            div.row.message-block.person-chat-block.hidden
+                                div.chat-message.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-left
+                                    div.message.text-left
+                                        | Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem
 
+                                div.chat-face.col-lg-2.col-md-2.col-sm-2.col-xs-2.text-center
+                                    div.face.text-center
 
-
-
-                div.row.message-block.bluemix-chat-block
-                    div.chat-face.col-lg-2.col-md-2.col-sm-2.col-xs-2.text-center
-                        div.face.text-center
-
-                    div.chat-message.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-left
-                        div.message.text-left
-                            | Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem Menssagem
-
-
-
-
-
-    div.row.footer-box
-      div.col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.custom-margin
-        div.row
-          form
-            div.form-group.col-lg-6.col-lg-offset-2.col-md-10.col-sm-11.col-xs-10.container-input
-              input(type="text", id="message", placeholder="Digite sua mensagem").form-control.field-message
-            div.form-group.col-lg-2.col-md-2.col-sm-1.col-xs-2.container-button.text-right
-              button(type="button", id="sendMessage").btn.btn-default.btn-xs.send-message-button
-                span.hidden-xs
-                    | ENVIAR
+        div.row.footer-box
+            div.col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.custom-margin
+                div.row
+                    form#formConversation
+                        div.form-group.col-lg-6.col-lg-offset-2.col-md-10.col-sm-11.col-xs-10.container-input
+                            input(type="text", id="message", placeholder="Digite sua mensagem", autocomplete="off").form-control.field-message
+                        div.form-group.col-lg-2.col-md-2.col-sm-1.col-xs-2.container-button.text-right
+                            button(type="button", id="sendMessage").btn.btn-default.btn-xs.send-message-button
+                                span.hidden-xs
+                                    | ENVIAR
 
 
 
 
-  block page-js
+    block page-js
+        script.
+            function chatElement(selector, message, childdrenIndex) {
+                let chatElement = document.querySelector(selector).cloneNode(true);
+                let chatMessage = chatElement.children[childdrenIndex];
 
-    script.
-      var send = function () {
-        let message = document.getElementById('message').value;
+                chatElement.classList.toggle('hidden');
+                chatMessage.children[0].textContent = message;
 
-        if(message !== undefined && message.length > 0 ){
-            let request = new XMLHttpRequest();
-
-            request.onload = function () {
-                console.log('Load the request');
-                console.log(this.responseText);
+                return chatElement;
             }
 
-            request.onreadystatechange = function () {
+            var send = function () {
+                let message = document.getElementById('message').value;
+                let messagesElement = document.getElementById('messagesBlock');
+
+                document.getElementById('message').value = '';
+
+                if (message !== undefined && message.length > 0) {
+                    document.getElementById('sendMessage').classList.toggle('hidden');
+
+                    let request = new XMLHttpRequest();
+
+                    request.onload = function () {
+                        let data = this.responseText;
+                        let obj = JSON.parse(data);
+                        console.log(obj);
+                        let text = obj.text;
+
+                        for(var i = 0; i < text.length; i++){
+                            messagesElement.appendChild(chatElement('.bluemix-chat-block.hidden', text[i], 1));
+                            document.getElementById('sendMessage').classList.toggle('hidden');
+                        }
+                    }
+
+                    messagesElement.appendChild(chatElement('.person-chat-block.hidden', message, 0));
+
+                    request.open('POST', 'conversation/send-message', true);
+
+                    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+                    request.send(JSON.stringify({message: message}));
+                }
 
             }
 
+            function keypress(e){
+                var key = e.which || e.keyCode;
+                if (key === 13) {
+                    document.getElementById('sendMessage').click();
+                }
+            }
 
-            request.open('POST', 'conversation/send-message', true);
-
-            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-
-            request.send(JSON.stringify({message: message}));
-
-        }
-
-      }
-
-      document.getElementById('sendMessage').addEventListener('click', send);
+            var form = document.getElementById("formConversation");
+            form.onsubmit = function () {return false;}
+            document.getElementById('sendMessage').addEventListener('click', send);
+            document.addEventListener('keypress', keypress);

@@ -23,10 +23,7 @@ app.post('/send-message', function (req, res) {
                 console.log(err);
                 res.json({text: 'ERRO'});
             } else {
-                console.log(response);
                 console.log(response.output.text);
-
-
                 res.json({text: response.output.text});
             }
         });
