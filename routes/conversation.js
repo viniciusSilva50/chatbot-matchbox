@@ -26,10 +26,6 @@ app.post('/send-message', function (req, res) {
                 res.json({text: ['Ops, aconteceu um erro, tente novamente!']});
             } else {
                 contextConversation = response.context;
-                // console.log(response.context.conversation_id);
-                // console.log(response.output.text);
-                // console.log(contextConversation);
-                // console.log('++++ Bluemix response ++++');
                 res.json({text: response.output.text});
             }
         });
